@@ -1,3 +1,15 @@
 <app-header></app-header>
+
+<h1>My 100 days of Code Blog</h1>
+<h2>Posts</h2>
+<article *ngFor = "let post of posts">
+    <h3>{{post.title}}</h3>
+    <h3>{{post.date}}</h3>
+    <p>{{post.body}}</p>    
+    <div *ngIf="post.img">
+    <img src="{{post.img}}" alt="code snippet" width="300">
+    </div>
+
+</article>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
