@@ -1,5 +1,7 @@
 body{
     text-align: center;
+    background-color:lightgray;
+    color: black;
 }
 .box{
     margin: auto;
@@ -18,7 +20,7 @@ article{
 }
 
 .welcome{
-    margin-top: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
 }
 

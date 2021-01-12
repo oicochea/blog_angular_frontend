@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <h2>Create a New Blog Post</h2>
-<button onclick="hideFunction()">Make a Post</button>
+<button class="button is-info" onclick="hideFunction()">Make a Post</button>
 <div id="formContainer">
 <form (submit)="createPost()">
     <label>Title</label>
@@ -12,7 +12,7 @@
     <input class="textarea" type="text" [(ngModel)]="createBody" name="body" #ctrl="ngModel" />
     <label>Code Snipped URL</label>
     <input  class="input"type="text" [(ngModel)]="createImg" name="img" #ctrl="ngModel" />
-    <input type="submit" value="create New Post" />
+    <input class="button is-success" type="submit" value="create New Post" />
 </form>
 </div>
 
