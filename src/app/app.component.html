@@ -1,23 +1,22 @@
 <app-header></app-header>
 
-<h1>My 100 days of Code Blog</h1>
 <h2>Create a New Blog Post</h2>
 <button onclick="hideFunction()">Make a Post</button>
 <div id="formContainer">
 <form (submit)="createPost()">
     <label>Title</label>
-    <input type="text" [(ngModel)]="createTitle" name="title" #ctrl="ngModel" />
+    <input class="input"type="text" [(ngModel)]="createTitle" name="title" #ctrl="ngModel" />
     <label>Date</label>
-    <input type="date" [(ngModel)]="createDate" name="date" #ctrl="ngModel" />
+    <input class="input" type="date" [(ngModel)]="createDate" name="date" #ctrl="ngModel" />
     <label>Blog</label>
-    <input type="text" [(ngModel)]="createBody" name="body" #ctrl="ngModel" />
+    <input class="textarea" type="text" [(ngModel)]="createBody" name="body" #ctrl="ngModel" />
     <label>Code Snipped URL</label>
-    <input type="text" [(ngModel)]="createImg" name="img" #ctrl="ngModel" />
+    <input  class="input"type="text" [(ngModel)]="createImg" name="img" #ctrl="ngModel" />
     <input type="submit" value="create New Post" />
 </form>
 </div>
 
-<h2>Posts</h2>
+<h2 class="myPosts">Posts</h2>
 <article *ngFor = "let post of posts">
     <div class="box">
     <h3>{{post.title}}</h3>
