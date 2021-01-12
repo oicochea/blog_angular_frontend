@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Angtemplate</title>
+  <title>100 Days Blog</title>
   <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<script>
+  function hideFunction() {
+var form = document.getElementById("formContainer");
+if (form.style.display === "block") {
+  form.style.display = "none";
+} else {
+  form.style.display = "block";
+}
+}
+</script>
 <body>
   <app-root></app-root>
 </body>

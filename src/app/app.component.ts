@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   posts: Array<any>=[]
   baseUrl: string  = "http://localhost:3000/posts"
-  
+
 //Binding Properties
   createTitle: string = ""
   createBody: string = ""
@@ -21,11 +21,11 @@ export class AppComponent implements OnInit {
     this.posts = await data
   }
 
-  async createPosts(){
+  async createPost(){
     console.log(this.createTitle, this.createBody, this.createDate, this.createImg)
     await fetch(this.baseUrl,{
       method:"post",
-      headers:{
+      headers: {
         "Content-Type" : "application/json",
       },
       body:JSON.stringify({

@@ -1,3 +1,18 @@
 body{
     text-align: center;
 }
+.box{
+    margin: auto;
+    width: 60%;
+    height: min-content;
+}
+
+article{
+    margin-top: 5%;
+    margin-bottom: 5%
+ 
+}
+
+#formContainer{
+    display: none;
+}
