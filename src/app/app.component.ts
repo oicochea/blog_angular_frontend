@@ -9,11 +9,18 @@ export class AppComponent implements OnInit {
   posts: Array<any>=[]
   baseUrl: string  = "http://localhost:3000/posts"
 
-//Binding Properties
+//Binding Properties for create
   createTitle: string = ""
   createBody: string = ""
   createDate: string = ""
   createImg: string = ""
+//properties for editing a post
+editTitle: string = ""
+editBody: string = ""
+editDate: string = ""
+editImg: string = ""
+eidtId: number = 0
+
 
   async getPosts(){
     const response = await fetch (this.baseUrl)
