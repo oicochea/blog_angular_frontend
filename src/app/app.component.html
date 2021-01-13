@@ -1,7 +1,7 @@
 <app-header></app-header>
-
-<h2>Create a New Blog Post</h2>
-<button class="button is-info" onclick="hideFunction()">Make a Post</button>
+<!-- 
+<h2>Create a New Blog Post</h2> -->
+<!-- <button class="button is-info" onclick="hideFunction()">Make a Post</button> -->
 <div id="formContainer">
 <form (submit)="createPost()">
     <label>Title</label>
@@ -9,22 +9,36 @@
     <label>Date</label>
     <input class="input" type="date" [(ngModel)]="createDate" name="date" #ctrl="ngModel" />
     <label>Blog</label>
-    <input class="textarea" type="text" [(ngModel)]="createBody" name="body" #ctrl="ngModel" />
+    <textarea rows="6" cols="20" wrap="hard" class="textarea" type="text" [(ngModel)]="editBody" name="body" #ctrl="ngModel"></textarea>
     <label>Code Snipped URL</label>
     <input  class="input"type="text" [(ngModel)]="createImg" name="img" #ctrl="ngModel" />
-    <input class="button is-success" type="submit" value="create New Post" />
+    <input class="button is-success"  onclick="hideFunction()" type="submit" value="create New Post" />
+</form>
+</div>
+<div id="editForm">
+<form (submit)="updatePost()">
+    <label>Title</label>
+    <input class="input"type="text" [(ngModel)]="editTitle" name="title" #ctrl="ngModel" />
+    <label>Date</label>
+    <input class="input" type="date" [(ngModel)]="editDate" name="date" #ctrl="ngModel" />
+    <label>Blog</label>
+    <textarea rows="6" cols="20" wrap="hard" class="textarea" type="text" [(ngModel)]="editBody" name="body" #ctrl="ngModel"></textarea>
+    <label>Code Snipped URL</label>
+    <input  class="input"type="text" [(ngModel)]="editImg" name="img" #ctrl="ngModel" />
+    <input class="button is-success" onclick="hideEditFunction()" type="submit" value="Edit Post" />
 </form>
 </div>
 
 <h2 class="myPosts">Posts</h2>
 <article *ngFor = "let post of posts">
     <div class="box">
-    <h3>{{post.title}}</h3>
-    <h3>{{post.date}}</h3>
-    <p>{{post.body}}</p>    
+    <p class="postTitle">{{post.title}}</p>
+    <p class="postDate">Date Posted:{{post.date}}</p>
+    <p class="postBody">{{post.body}}</p>    
     <div *ngIf="post.img">
-    <img src="{{post.img}}" alt="code snippet" width="300">
+    <img class="postImg"src="{{post.img}}" alt="code snippet">
     </div>
+    <button class="button is-success" (click)="editSelect(post)" onclick="hideEditFunction()">Edit</button>
 </div>
 
 </article>

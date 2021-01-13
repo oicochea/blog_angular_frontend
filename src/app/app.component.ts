@@ -26,6 +26,7 @@ editId: number = 0
     const response = await fetch (this.baseUrl)
     const data = await response.json()
     this.posts = await data
+    this.posts.sort((a,b) => (b.id - a.id));
   }
 
   async createPost(){
@@ -58,6 +59,7 @@ editSelect(post){
 }
 
 async updatePost(){
+  console.log(this.editDate)
   await fetch (this.baseUrl + "/" + this.editId,{
     method:"put",
     headers:{
