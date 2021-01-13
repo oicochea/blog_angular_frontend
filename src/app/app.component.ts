@@ -19,7 +19,7 @@ editTitle: string = ""
 editBody: string = ""
 editDate: string = ""
 editImg: string = ""
-eidtId: number = 0
+editId: number = 0
 
 
   async getPosts(){
@@ -48,6 +48,36 @@ eidtId: number = 0
     this.createDate = " "
     this.createImg = " "
   }
+
+editSelect(post){
+  this.editId = post.id
+  this.editTitle = post.title
+  this.editBody = post.body
+  this.editDate = post.date
+  this.editImg = post.img 
+}
+
+async updatePost(){
+  await fetch (this.baseUrl + "/" + this.editId,{
+    method:"put",
+    headers:{
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify({
+        title : this.editTitle,
+        date: this.editDate ,
+        body: this.editBody,
+        img: this.editImg 
+      }),
+  })
+  this.getPosts()
+  this.editTitle =" "
+  this.editBody = " "
+  this.editDate = " "
+  this.editImg = " "
+  this.editId = 0
+
+}
 
 ngOnInit(){
   this.getPosts()
