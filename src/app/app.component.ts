@@ -81,6 +81,13 @@ async updatePost(){
 
 }
 
+async deletPost(post){
+  await fetch(this.baseUrl+ "/"+ post.id,{
+    method:"delete",
+  })
+  this.getPosts()
+}
+
 ngOnInit(){
   this.getPosts()
 }
