@@ -38,9 +38,11 @@
     <div *ngIf="post.img">
     <img class="postImg"src="{{post.img}}" alt="code snippet">
     </div>
+    <div class="buttonsContainer">
     <button class="button is-success" (click)="editSelect(post)" onclick="hideEditFunction()">Edit</button>
     <button class="button is-danger" (click)="deletePost(post)" >Delete</button>
-</div>
+    </div>  
+    </div>
 
 </article>
 <router-outlet></router-outlet>

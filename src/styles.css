@@ -122,3 +122,10 @@ form{
       margin-right: 60%;
   }
  
+  .buttonsContainer{
+      margin-top: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content:space-evenly;
+
+  }
